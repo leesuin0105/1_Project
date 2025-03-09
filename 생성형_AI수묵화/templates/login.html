@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="static/css/default.css">
+  <link rel="stylesheet" href="static/css/login.css">
+  <title>로그인</title>
+</head>
+<body>
+  <section class="login">
+    <h2>로그인</h2>
+    <form action="/login" method="post">
+      <ul>
+        <li><input type="text" name="username" placeholder="아이디" title="아이디입력"></li>
+        <li><input type="password" name="password" placeholder="비밀번호" title="비밀번호입력"></li>
+        <li><input type="checkbox" id="chk_id"><label for="chk_id">아이디저장</label></li>
+        <li><button type="submit" class="login">로그인</button></li>
+        <li><a class="main" href="/">홈으로 돌아가기</a></li>
+      </ul>
+    </form>
+    <div>
+      <ul>
+        <li><a href="/sign">회원가입</a></li>
+        <li><a href="find_id">아이디 찾기</a></li>
+        <li><a href="/find_pass">비밀번호 찾기</a></li>
+      </ul>
+    </div>
+    {% if logged_in %}  <!-- 로그인 상태에 따라 버튼 표시 여부 확인 -->
+      <p class="success">로그인 되었습니다.</p>
+      <a class="logout" href="/logout">로그아웃</a>  <!-- 로그아웃 버튼 -->
+    {% else %}
+      {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+      {% endif %}
+    {% endif %}
+  </section>
+</body>
+</html>

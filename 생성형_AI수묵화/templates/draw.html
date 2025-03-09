@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/draw.css') }}">
+
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro_bg">
+      <div class="header">
+
+        <ul class="nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/community">COMMUNITY</a></li>
+          {% if logged_in %}
+            <li><a href="/draw">DRAWING</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
+          {% else %}
+            <li><a href="/login">LOGIN</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="intro_text">
+        <h1>수묵화를 그려드릴게요.</h1>
+        <h4 class="contents1">We'll draw ink-and-wash paintings.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- intro end -->
+  <!-- main_text1 배경을 유지하며 내용 삭제 -->
+  <div class="main_text1_a" style="background-image: white; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+  
+  <div class="main_text1_draw">
+    <h2>DRAWING</h2>
+    <div class="contents1">수묵화를 그려봅시다.</div>
+    <div style="height: 50px;"></div>
+    <!-- Add Input Form here -->
+    <h2>Input a Word</h2>
+    <div style="height: 30px;"></div>
+    - bmb style = 백묘법<br/>
+    - grb style = 구륵법<br/>
+    - mgb style = 몰골법 <br/>
+    <div style="height: 10px;"></div>
+    * 각 기법에 대해 자세히 알고싶다면 "home" 페이지를 확인해주세요.
+    <div style="height: 30px;"></div>
+    <form method="post">
+      <select name="selectedBox" name="paintStyle">
+        <option value="Box 1">bmb style</option>
+        <option value="Box 2">grb style</option>
+        <option value="Box 3">mgb style</option>
+      </select>
+      <input type="text" name="input_data">
+      <input type="submit" value="Submit">
+    </form>
+    <div style="height: 30px;"></div>
+    <!-- Add Result Display here -->
+    <h2>Result</h2>
+    <div id="answer"><img src="data:image/png;base64,{{ output_data }}"></div>
+    <!-- Add Download Button here -->
+    <button id="downloadButton" class="button">Download Image</button>
+    <div style="height: 90px;"></div>
+    <h2> 그림을 "community" 페이지에 자랑해보세요 !</h2>
+  </div>
+
+<script>
+    document.getElementById("downloadButton").addEventListener("click", function() {
+        var link = document.createElement("a");
+        link.href = "data:image/png;base64,{{ output_data }}";
+        link.download = "downloaded_image.png";
+        link.click();
+    });
+</script>
+
+  <!-- main_text2 삭제 -->
+  <div class="footer">
+    <div>LOGO</div>
+    <div>
+      CEO. 타모디자인 <br>
+      Addr. 서울특별시 금천구 가산1로 280-3 우림하이엔드타워 6차 14F 고객상담실 Fax/Tel. <br>
+      02 - 223 -2912~5 <br>
+      COPYRIGHT 2019. TAMO. ALL RIGHT RESERVED.
+    </div>
+  </div>
+</body>
+</html>

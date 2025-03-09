@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/community.css')}}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro_bg">
+      <div class="header">
+
+        <ul class="nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/community">COMMUNITY</a></li>
+          {% if logged_in %}
+            <li><a href="/draw">DRAWING</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
+          {% else %}
+            <li><a href="/login">LOGIN</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="intro_text">
+        <h1>수묵화를 그려드릴게요.</h1>
+        <h4 class="contents1">We'll draw ink-and-wash paintings.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- intro end -->
+
+  <div class="main_text1_draw"></div>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>Community</strong>
+            <p>자신의 그림을 자랑해보세요!</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    <a href="{{ url_for('view', post_id=post.id) }}">{{ post.title }}</a>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>번호</dt>
+                        <dd>{{ post.id }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd>{{ post.writer }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>{{ post.timestamp }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd>{{ post.views }}</dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    {{ post.content }}
+                </div>
+            </div>
+
+             <div class="image">
+                {% if post.image_filename %}
+                    <img src="{{ url_for('static', filename='uploads/' + post.image_filename) }}" alt="첨부된 이미지" style="max-width: 100%;">
+                {% else %}
+                    <p>첨부된 이미지 없음</p>
+                {% endif %}
+            </div>
+            <div class="bt_wrap">
+                <a href="{{ url_for('community') }}" class="on">목록</a>
+                <a href="{{ url_for('write', post_id=post.id) }}">수정</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro_bg">
+      <div class="header">
+
+        <ul class="nav">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/community">COMMUNITY</a></li>
+            {% if logged_in %}
+                <li><a href="/draw">DRAWING</a></li>
+                <li><a href="/logout">LOGOUT</a></li>
+            {% else %}
+              <li><a href="/login">LOGIN</a></li>
+            {% endif %}
+        </ul>
+      </div>
+      <div class="intro_text">
+        <h1>수묵화에 대해 알아봅시다.</h1>
+        <h4 class="contents1">Let's learn about ink painting.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- intro end -->
+
+  <div class="main_text1 meaning-section">
+    <h2>Meaning</h2>
+    <div class="contents1">수묵화 의미에 대해 알아보아요.</div>
+    <div class="service">
+      <div class="food_photo">
+      <img src="{{ url_for('static', filename='images/image/mgb_2.jpg') }}">
+      </div>
+      <div class="contents2">
+          <h2>"수묵화" 란?</h2>
+          수묵화는 채색을 가하지 않고 먹의 농담을 이용하여 그린 그림이다. 중국의 주대 말기부터 시작된 수묵화 기법은,<br/>
+          먹선만을 사용하여 그린 백묘화에서 출발하여 먹의 농담을 이용한 파묵, 먹물이 번져 퍼지게 하는 발묵 기법 등으로 발전했다.<br/>
+          먹색만으로 모든 색채의 효과를 나타내는 수묵화의 주요 소재는 산수·인물·수석·화조·영모·사군자 등이다.<br/> 
+          우리나라는 고려시대부터 수묵화가 전래되었을 것으로 추정되며 조선시대에는 중국 수묵화의 주요 양식이 모두 등장한다.<br/>
+          정선에 이르러 한국 산수의 특징을 표현하기에 적절하고도 효과적인 새로운 기법이 창안되는 등 한국 특유의 수묵산수화가 자리잡았다.<br/>
+      </div>
+    </div>
+  </div>
+
+  <div class="main_text1 style-section">
+    <h2>Ink Painting Styles</h2>
+    <div class="contents1">수묵화의 다양한 스타일을 알아보아요.</div>
+    <div class="service">
+      <div class="food_photo">
+        <img src="{{ url_for('static', filename='images/image/b_home.png') }}">
+      </div>
+      <div class="contents2">
+        <h2>백묘법</h2>
+        붓의 윤곽선(선)으로만 그린 그림 그 때문에 그림의 배경이 온통 하얀색이고 하얀색으로 그린 그림으로도 보인다. <br/>
+        고대 ‘백화(白畵)’에서 유래한 중국 회화의 기법. <br/> 
+        묵선(墨線)만으로 대상을 묘사하면서 색채를 칠하지 않는 것을 뜻한다.<br/> 
+        넓게는 색채를 칠하기 전의 밑그림, 분본, 소묘 등도 포함되지만, 본격적인 백묘화는 선묘(線描)로서 완결시킨 작품을 가리킨다.<br/>
+      </div>
+    </div>
+    <div class="service">
+      <div class="food_photo">
+        <img src="{{ url_for('static', filename='images/image/g_home.png') }}">
+      </div>
+      <div class="contents2">
+        <h2>구륵법</h2>
+        윤곽선을 넣고 그 안에 색을 칠하는 기법 <br/>
+        한자로 갈고리 굴레라는 뜻으로 한자 뜻과 같이 선으로 굵게 표현하고 주로 그 속에 색을 넣어서 표현하는 그림을 그렸습니다. <br/>
+        송나라로 전해지면서 궁궐에서 그리게 되면서 송나라 황실의 화풍을 상징하는 스타일로 원체화(院体畵)로 발전했습니다. <br/>
+      </div>
+    </div>
+    <div class="service">
+      <div class="food_photo">
+        <img src="{{ url_for('static', filename='images/image/m_home.png') }}">
+      </div>
+      <div class="contents2">
+        <h2>몰골법</h2>
+        윤곽선 없이 한 번의 붓으로 그림과 채색하는 그림 <br/>
+        한자어 그대로 뼈가 없다는 뜻인데 예로부터 骨은 뼈, 즉 물체의 형태를 구성하는 윤곽선을 말합니다.<br/>
+        그림의 스타일이 자유분방해서 황실보다는 문인들이 좋아해서 자주 그렸습니다.<br/>
+        동양화를 그릴 때 사전에 윤곽선이나 스케치 없이 붓 한 번으로 채색(색칠)과 그림을 그립니다.<br/>
+      </div>
+    </div>
+  </div>
+
+  <!-- main_text2 삭제 -->
+  <div class="footer">
+    <div>LOGO</div>
+    <div>
+      CEO. 타모디자인 <br>
+      Addr. 서울특별시 금천구 가산1로 280-3 우림하이엔드타워 6차 14F 고객상담실 Fax/Tel. <br>
+      02 - 223 -2912~5 <br>
+      COPYRIGHT 2019. TAMO. ALL RIGHT RESERVED.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="intro_bg">
+        <div class="header">
+          <div class="searchArea">
+            <form>
+              <input type="search" placeholder="search">
+              <span>검색</span>
+            </form>
+          </div>
+          <ul class="nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/draw">DRAWING</a></li>
+            {% if logged_in %}
+              <li><a href="/logout">LOGOUT</a></li>
+            {% else %}
+              <li><a href="/login">LOGIN</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        </div>
+        <div class="intro_text">
+          <h1>수묵화를 그려드릴게요.</h1>
+          <h4 class="contents1">We'll draw ink-and-wash paintings.</h4>
+        </div>
+      </div>
+      </div>
+      <!-- intro end-->
+      <ul class="amount">
+        <li>
+          <div>
+            <div class="contents1">오늘의 방문자 수</div>
+            <div class="result">12301 명</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="contents1">오늘의 작품 수</div>
+            <div class="result">122033 작품</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="contents1">목표까지 남은 작품 수</div>
+            <div class="result">76549 작품</div>
+          </div>
+        </li>
+        <li>
+            <div>
+              <div class="contents1">오늘의 목표 작품 수 </div>
+              <div class="result">200000</div>
+            </div>
+        </li>
+      </ul>
+      <!-- amount end -->
+
+      <div class="main_text0">
+        <h1>CHOICE</h1>
+        <div class="contents1">오늘의 인기 수묵화를 확인하세요 !</div>
+        
+        <ul class="icons">
+          <li>
+            <div class="icon_img">
+              <img src="{{ url_for('static', filename='images/image/icon0.svg') }}">
+            </div>
+            <div class="contents1_bold">몰골법</div>
+            <div class="contents2">
+                김채은님의 수묵화 AI 그림입니다.
+            </div>
+          </li>
+
+          <li>
+            <div class="icon_img">
+              <img src="{{ url_for('static', filename='images/image/icon1.svg') }}">
+            </div>
+            <div class="contents1_bold">계륵법</div>
+            <div class="contents2">
+                윤현석님의 수묵화 AI 그림입니다.
+            </div>
+          </li>
+
+          <li>
+            <div class="icon_img">
+              <img src="{{ url_for('static', filename='images/image/icon2.svg') }}">
+            </div>
+            <div class="contents1_bold">몰골범</div>
+            <div class="contents2">
+                정진우님의 수묵화 AI 그림입니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main_text1">
+        <h1>ABOUT</h1>
+        <div class="contents1">수묵화란 무엇을 의미할까요 ?</div>
+        <div class="service">
+          <div class="food_photo">
+            <img src="{{ url_for('static', filename='images/image/mgb_2.jpg') }}" alt="Image">
+          </div>
+          <div class="contents2">
+              <h2>"수묵화" 란?</h2>
+              수묵화는 채색을 가하지 않고 먹의 농담을 이용하여 그린 그림이다. 중국의 주대 말기부터 시작된 수묵화 기법은,<br/>
+              먹선만을 사용하여 그린 백묘화에서 출발하여 먹의 농담을 이용한 파묵, 먹물이 번져 퍼지게 하는 발묵 기법 등으로 발전했다.<br/>
+              먹색만으로 모든 색채의 효과를 나타내는 수묵화의 주요 소재는 산수·인물·수석·화조·영모·사군자 등이다.<br/> 
+              우리나라는 고려시대부터 수묵화가 전래되었을 것으로 추정되며 조선시대에는 중국 수묵화의 주요 양식이 모두 등장한다.<br/>
+              정선에 이르러 한국 산수의 특징을 표현하기에 적절하고도 효과적인 새로운 기법이 창안되는 등 한국 특유의 수묵산수화가 자리잡았다.<br/>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_text2">
+        <ul>
+          <li>
+            <div><h1>CONTACT</h1></div>
+            <div>우리에게 파트너십을 신청하거나, 고객이 되어주세요</div>
+            <div class="more2">로그인 / 회원가입</div>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div>LOGO</div>
+        <div>
+          CEO. 타모디자인 <br>
+          Addr. 서울특별시 금천구 가산1로 280-3 우림하이엔드타워 6차 14F 고객상담실 Fax/Tel. <br>
+          02 - 223 -2912~5 <br>
+          COPYRIGHT 2019. TAMO. ALL RIGHT RESERVED.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

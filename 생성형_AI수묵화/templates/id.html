@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/id.css') }}">
+    <title>아이디 찾기</title>
+</head>
+<body>
+    <div class="container">
+        <h1>아이디 찾기</h1>
+        <form action = "/find_id" method="post">
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="button-group">
+                <button type="submit">아이디 찾기</button>
+                <div class="button-space"></div>
+                <a href="/login" class="main-button">로그인 페이지로 돌아가기</a>
+            </div>
+        </form>
+        {% if found_username %}
+            <p>일치하는 아이디: {{ found_username }}</p>
+        {% endif %}
+        {% if not_found_message %}
+            <p>{{ not_found_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
