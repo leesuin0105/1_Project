@@ -5,7 +5,7 @@
 ---
 
 ## 📌 프로젝트 개요
-- **기간**: 2024.07 ~ 2024.08  
+- **기간**: 2024.05 ~ 2024.06  
 - **분석 방식**: Python (Pandas, Matplotlib, Seaborn, Scikit-learn)  
 - **데이터 출처**: [Instacart Kaggle Dataset](https://www.kaggle.com/c/instacart-market-basket-analysis/data)  
 - **팀 구성**: 데이터 분석가 4명 (BDA 14기 팀 프로젝트)
