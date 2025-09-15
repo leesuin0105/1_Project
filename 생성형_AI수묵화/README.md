@@ -33,7 +33,6 @@
 
 ## 📂 프로젝트 구조
 생성형_AI수묵화/
-│
 ├─ static/ # 정적 파일 (CSS, JS)
 ├─ templates/ # HTML 템플릿
 ├─ image/ # 생성 이미지 저장
