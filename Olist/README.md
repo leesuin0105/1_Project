@@ -1,4 +1,4 @@
-# 🧰 Olist Seller Segmentation — 그룹별 전략 제안 (C등급 심화 분석)
+#  Olist Seller Segmentation — 그룹별 전략 제안 (C등급 심화 분석)
 > **TL;DR**: Olist 판매자를 매출·판매량 기반으로 A/B/C/D로 그룹화하고,  
 > C등급의 성과 패턴·제품 포트폴리오 특성을 심층 분석했습니다.  
 > 전체 인사이트·전략은 PDF 보고서로 제공하고, 이 레포엔 **C등급 분석 코드**만 포함합니다. :contentReference[oaicite:0]{index=0}
